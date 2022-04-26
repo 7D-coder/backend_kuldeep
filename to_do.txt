@@ -1,0 +1,30 @@
+Project Introduction: 00:00:00
+Understanding The Project: 00:05:22
+Initializing Project With NPM: 00:10:36
+Installing Basic Dependencies: 
+Basic about nodemon: 00:14:38
+Listining to express app: 00:17:55
+About Environment Variables: 00:18:45
+Setting up express-routers: 00:22:15
+Adding Controller to create a post: 00:27:23
+When Express Throughs an Error: 00:28:39
+Connecting to mongo-db using mongoose: 00:29:15
+Where to find local mongo db uri: 00:31:13
+Continuing to mongo-db connection: 00:32:52
+Creating Post Schema (model): 00:36:10
+Setting up postman: 00:48:37
+Configuering morgan: 00:50:59
+Sending & Receiving Data from  frontend/postman: 00:52:31
+Creating New Blog Post: 00:55:12
+How to send file from postman: 01:01:25
+How to read files in express app: 01:02:55
+Validating file type using fileFilter in multer: 01:07:00
+Validating incoming data using express-validator: 01:12:55
+Custom express-validator: 01:19:45
+Saving record (post) inside database: 01:29:45
+Sending and Receiving Array/Object in node-express: 01:31:05
+How to handle asyc errors in node-express app: 01:35:25
+Storing Featured Post: 01:41:06
+Logic to Featured Post: 01:44:15
+Featured Post Schema (model): 01:45:23
+Creating New Featured Posts:
