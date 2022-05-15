@@ -225,17 +225,12 @@ exports.searchPost = async (req, res) => {
 };
 
 exports.getRelatedPosts = async (req, res) => {
-  const { postId } = req.params;
-
-  if (!isValidObjectId(postId))
-    return res.status(401).json({ error: "Invaild request!" });
-  const post = await Post.findById(postId);
-
-  if (!post) return res.status(404).json({ error: "Post not found! " });
-
+  const { tags } = req.params;
+  console.log(tags)
+  
   const relatedPosts = await Post.find({
-    tags: { $in: [...post.tags] },
-    _id: { $ne: post._id },
+    tags : [tags]
+    //_id: { $ne: post._id },
   })
     .sort({ createdAt: -1 })
     .limit(5);
@@ -246,12 +241,15 @@ exports.getRelatedPosts = async (req, res) => {
       title: post.title,
       meta: post.meta,
       slug: post.slug,
+      tags:post.tags,
       content: post.content,
       thumbnail: post.thumbnail?.url,
       author: post.author,
     })),
   });
 };
+
+
 
 exports.uploadImage = async (req, res) => {
   const { file } = req;

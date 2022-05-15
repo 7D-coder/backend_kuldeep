@@ -41,7 +41,7 @@ router.get("/single/:slug", getPost); // clear
 router.get("/featured-posts", getFeaturedPosts); // error
 router.get("/posts", getPosts); //clear
 router.get("/search", searchPost); // clear
-router.get("/related-posts/:postId", getRelatedPosts); // clear
+router.get("/related-posts/:tags", getRelatedPosts); // clear
 
 router.post("/upload-image", multer.single("image"), uploadImage); //clear
 
