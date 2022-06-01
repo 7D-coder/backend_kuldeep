@@ -211,7 +211,7 @@ exports.getPosts = async (req, res) => {
       content: post.content,
       thumbnail: post.thumbnail?.url,
       author: post.author,
-      //createdAt: post.createdAt,
+      createdAt: post.createdAt,
       tags:post.tags,
     })),
     postCount,
