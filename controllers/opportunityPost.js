@@ -95,6 +95,7 @@ exports.deletePost = async (req, res) => {
 exports.updatePost = async (req, res) => {
   const { title, meta, content, slug, author, tags, featured } = req.body;
   const { file } = req;
+  const {postId} = req.params;
   if (!isValidObjectId(postId))
     return res.status(401).json({ error: "Invalid request! " });
   //console.log(postId);
