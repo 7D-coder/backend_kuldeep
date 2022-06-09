@@ -7,10 +7,9 @@ require("./db");
 
 const app = express();
 
-const morgan = require("morgan");
+//const morgan = require("morgan");
 const cors = require("cors")// ye dekh........
-
-app.use(morgan("dev"));
+//app.use(morgan("dev"));
 
 app.use(cors());// ye dekh......
 
