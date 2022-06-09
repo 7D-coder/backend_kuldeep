@@ -32,7 +32,7 @@ const isFeaturedPost = async (postId) => {
 
 exports.createPost = async (req, res) => {
   // //const  obj = JSON.parse(req.body)
-  // console.log(req.body);
+  console.log(req.body);
   // //console.log(title);
    const { title, meta, content, slug, author, tags, featured } = req.body;
   const { file } = req;
@@ -44,13 +44,17 @@ exports.createPost = async (req, res) => {
 
    const newPost = new Post({ title, meta, content, slug, author, tags });
 
-  // // //return console.log(file);
+  // // //return 
+  //console.log(file);
   if (file) {
     const { secure_url: url, public_id } = await cloudinary.uploader.upload(
     file.path
     );
     newPost.thumbnail = { url, public_id };
+    //console.log(newPost.thumbnail.url)
+    //console.log(newPost.thumbnail.public_id)
    }
+   
 
    await newPost.save();
 
@@ -273,7 +277,10 @@ exports.uploadImage = async (req, res) => {
   const { file } = req;
   if (!file) return res.status(401).json({ error: "Image file is missing!" });
 
+  console.log(file.path);
   const { secure_url: url } = await cloudinary.uploader.upload(file.path);
-
   res.status(201).json({ image: url });
 };
+//(https://res.cloudinary.com/deadiihep/image/upload/v1654717453/apjowknm5wonirumhheg.jpg)
+// "error": "Invalid Signature 4ae62cafcd24907ddfa8c32e86257d4eb666a4a6. String to sign - 'timestamp=1654764047'."
+//CLOUDINARY_URL=cloudinary://714691393944851:iA4iftCnah0GrlXtu7ZJmhzJR0o@deadiihep
