@@ -172,7 +172,7 @@ exports.getPost = async (req, res) => {
       tags,
       content,
       featured,
-      //createdAt,
+      createdAt: post.createdAt,
     },
   });
 };
