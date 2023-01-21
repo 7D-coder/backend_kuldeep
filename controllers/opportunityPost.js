@@ -201,6 +201,7 @@ exports.getPosts = async (req, res) => {
       slug: post.slug,
       content: post.content,
       thumbnail: post.thumbnail?.url,
+      createdAt: post.createdAt,
       author: post.author,
     })),
   });
@@ -221,6 +222,7 @@ exports.searchPost = async (req, res) => {
       slug: post.slug,
       content: post.content,
       thumbnail: post.thumbnail?.url,
+      createdAt: post.createdAt,
       author: post.author,
     })),
   });
